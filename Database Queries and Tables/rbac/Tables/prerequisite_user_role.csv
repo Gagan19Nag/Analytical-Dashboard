@@ -1,0 +1,5 @@
+role_id,prerequisite_role_id
+r5,r3
+r5,r4
+r3,r1
+r4,r2

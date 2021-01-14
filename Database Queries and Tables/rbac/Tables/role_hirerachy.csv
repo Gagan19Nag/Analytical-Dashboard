@@ -1,0 +1,6 @@
+role_id,role_parent_id
+r1,r3
+r2,r4
+r3,r5
+r4,r5
+r5,null

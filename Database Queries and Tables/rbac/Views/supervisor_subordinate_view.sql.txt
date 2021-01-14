@@ -1,0 +1,14 @@
+create view rbac.supervisior_subordinate_relation as 
+SELECT dv2.user_name AS superviser_name,
+    dv2.user_id AS superviser_user_id,
+    a.role_parent_id AS superviser_role_id,
+    a.user_name AS subordinate_name,
+    a.user_id AS subordinate_user_id,
+    a.role_id AS subordinate_role_id
+   FROM (( SELECT rh.role_id,
+            rh.role_parent_id,
+            dv1.user_name,
+            dv1.user_id
+           FROM (rbac.role_hierarchy rh
+             LEFT JOIN rbac.denormalized_view dv1 ON ((rh.role_id = dv1.role_id)))) a
+     LEFT JOIN rbac.denormalized_view dv2 ON ((a.role_parent_id = dv2.role_id)));

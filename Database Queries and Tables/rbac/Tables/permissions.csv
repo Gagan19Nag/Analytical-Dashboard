@@ -1,0 +1,4 @@
+permission_id,permission
+p1,sales_representative_view
+p2,manager_view
+p3,executive_view

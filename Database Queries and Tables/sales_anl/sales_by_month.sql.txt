@@ -1,0 +1,8 @@
+create view sales_anl.total_sales_by_month as 
+ SELECT sales_raw_table.sales_representative,
+    date_part('month'::text, sales_raw_table.order_date) AS month,
+    date_part('year'::text, sales_raw_table.order_date) AS year,
+    sum(sales_raw_table.total_sale_amount) AS total_sale_amount
+   FROM sales_raw.sales_raw_table
+  GROUP BY sales_raw_table.sales_representative, (date_part('month'::text, sales_raw_table.order_date)), (date_part('year'::text, sales_raw_table.order_date))
+  ORDER BY sales_raw_table.sales_representative, (date_part('year'::text, sales_raw_table.order_date)), (date_part('month'::text, 

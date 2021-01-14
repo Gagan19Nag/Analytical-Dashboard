@@ -1,0 +1,3 @@
+permission_id,prerequisite_permission_id
+p3,p2
+p2,p1

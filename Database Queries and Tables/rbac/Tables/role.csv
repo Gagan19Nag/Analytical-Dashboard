@@ -1,0 +1,6 @@
+role_id,role,role_permission_cardinality
+r1,Sales Representative - 1,-1
+r2,Sales Representative - 2,-1
+r3,Manager - 1,2
+r4,Manager - 2,2
+r5,Director,1

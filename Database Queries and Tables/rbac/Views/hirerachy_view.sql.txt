@@ -1,0 +1,5 @@
+create rbac.hirerachy_view as 
+SELECT supervisor_subordinate_relation_ship_view.superviser_name,
+    supervisor_subordinate_relation_ship_view.subordinate_name
+   FROM rbac.supervisor_subordinate_relation_ship_view
+  WHERE (supervisor_subordinate_relation_ship_view.superviser_name IS NOT NULL);

@@ -1,0 +1,13 @@
+create view rbac.denormalized_view as 
+SELECT u.user_name,
+    u.user_id,
+    r.role_id,
+    r.role,
+    r.role_permission_cardinality,
+    p.permission_id,
+    p.permission
+   FROM ((((rbac.users u
+     LEFT JOIN rbac.user_role_assignment ura ON ((u.user_id = ura.user_id)))
+     LEFT JOIN rbac.role r ON ((r.role_id = ura.role_id)))
+     LEFT JOIN rbac.permission_role_assignment pra ON ((pra.role_id = r.role_id)))
+     LEFT JOIN rbac.permissions p ON ((pra.permission_id = p.permission_id)));
