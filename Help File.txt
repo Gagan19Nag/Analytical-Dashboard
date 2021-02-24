@@ -96,3 +96,5 @@ Step 5) Once project is opened click on run
 Dependencies :
 1. Database server should be running when we are running flask code.
 
+
+Hi Gagan N
